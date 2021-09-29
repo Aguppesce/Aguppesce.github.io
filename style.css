@@ -185,7 +185,7 @@ p {
   background-attachment: var(--hero-attachment);
 }
 
-.hero-image-opacity {
+.hero-image-opacity {  
   width: 100%;
   min-height: 100vh;
   display: flex;
