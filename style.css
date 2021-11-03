@@ -1,5 +1,8 @@
+/* background: rgb(255,0,0);
+  background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(10,96,240,1) 30%, rgba(246,78,0,1) 100%);  */
 /******************CUSTOM PROPERTIES******************/
 :root {
+  
   --first-color: #fc4e09f8;
   --first-alpha-color: rgb(255, 115, 0);
   --second-color: #0d152b;
@@ -39,6 +42,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: var(--text-color);
+  
 }
 
 a {
