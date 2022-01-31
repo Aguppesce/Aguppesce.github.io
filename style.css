@@ -191,7 +191,7 @@ p {
 
 .hero-image-opacity {  
   width: 100%;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,7 +200,7 @@ p {
 }
 
 .hero-image-title {
-  font-size: 7.5vw;
+  font-size: 5.5vw;
   color: var(--hero-text-color);
 }
 
