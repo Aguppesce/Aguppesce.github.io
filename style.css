@@ -3,12 +3,12 @@
 /******************CUSTOM PROPERTIES******************/
 :root {
   
-  --first-color: #c9e265;
-  --first-alpha-color: rgb(193, 221, 65);
-  --second-color: #455a64;
-  --second-alpha-color: rgba(53, 73, 129, 0.75);
-  --third-color: #a7e93e;
-  --third-alpha-color: rgba(188, 240, 92, 0.75);
+  --first-color: crimson;
+  --first-alpha-color: crimson(193, 221, 65);
+  --second-color: rgb(31, 30, 30);
+  --second-alpha-color: rgba(31, 30, 30, 0.24);
+  --third-color: black;
+  --third-alpha-color: crimson(188, 240, 92, 0.75);
   --white-color: #fff;
   --gray-light-color: #f3f3f3;
   --gray-color: #ccc;
