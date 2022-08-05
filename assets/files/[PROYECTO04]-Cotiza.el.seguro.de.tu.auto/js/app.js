@@ -1,8 +1,49 @@
+//VIDEO 89
 //Constructor para Seguro
 function Seguro(marca, anio, tipo) {
     this.marca = marca;
     this.anio = anio;
     this.tipo = tipo;
+}
+
+Seguro.prototype.cotizarSeguro = function (informacion) {
+    /*
+        1 = Americano 1.15
+        2 = Asiático 1.05
+        3 = Europeo 1.35
+     */
+    let cantidad;
+    const base = 2000;
+
+    switch (this.marca) {
+        case '1':
+            cantidad = base * 1.15;
+            break;
+        case '2':
+            cantidad = base * 1.05;
+            break;
+        case '3':
+            cantidad = base * 1.35;
+            break;
+    }
+
+    //Leer el año
+    const diferencia = new Date().getFullYear() - this.anio;
+
+    //Cada año de diferencia hay que reducir 3% el valor del seguro
+    cantidad -= ((diferencia * 3) * cantidad / 100);
+
+    /*
+        Si el seguro es básico se múltiplica por 30% más
+        Si el seguro es completo 50% más
+    */
+    if(this.tipo === "basico"){
+        cantidad *= 1.30;
+    }else{
+        cantidad *= 1.50;
+    }
+
+    return cantidad;
 }
 
 //Toodo lo que se muestra
@@ -13,17 +54,17 @@ Interfaz.prototype.mostrarError = function (mensaje, tipo) {
     const div = document.createElement("div");
 
     if (tipo === "error") {
-        div.classList.add("mensaje","error");
+        div.classList.add("mensaje", "error");
     } else {
-        div.classList.add("mensaje","correcto");
+        div.classList.add("mensaje", "correcto");
     }
 
     div.innerHTML = `${mensaje}`;
     formulario.insertBefore(div, document.querySelector('.form-group'));
 
-    setTimeout(function(){
+    setTimeout(function () {
         document.querySelector(".mensaje").remove();
-    },3000);
+    }, 3000);
 }
 
 //Event Listener 
@@ -52,7 +93,10 @@ formulario.addEventListener("submit", function (e) {
         interfaz.mostrarError("Faltan datos, revisa el formulario y prueba de nuevo", "error");
     } else {
         //Instancia seguro y mostrar interfaz
-        console.log("Todo correcto");
+        const seguro = new Seguro(marcaSeleccionada, anioSeleccionado, tipo);
+
+        //Cotizar el seguro
+        const cantidad = seguro.cotizarSeguro();
     }
 });
 
