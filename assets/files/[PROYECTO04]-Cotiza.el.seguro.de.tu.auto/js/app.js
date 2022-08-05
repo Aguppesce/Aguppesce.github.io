@@ -37,9 +37,9 @@ Seguro.prototype.cotizarSeguro = function (informacion) {
         Si el seguro es básico se múltiplica por 30% más
         Si el seguro es completo 50% más
     */
-    if(this.tipo === "basico"){
+    if (this.tipo === "basico") {
         cantidad *= 1.30;
-    }else{
+    } else {
         cantidad *= 1.50;
     }
 
@@ -67,6 +67,32 @@ Interfaz.prototype.mostrarError = function (mensaje, tipo) {
     }, 3000);
 }
 
+//Imprime el resultado de la cotización
+Interfaz.prototype.mostrarResultado = function (seguro, total) {
+    const resultado = document.getElementById("resultado");
+    let marca;
+    switch (seguro.marca) {
+        case '1':
+            marca = "Americano";
+            break;
+        case '2':
+            marca = "Asiático";
+            break;
+        case '3':
+            marca = "Europeo";
+            break;
+    }
+    //Crear un div
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <p>Tu Resumen:</p>
+    <p>Marca: ${marca}</p>
+    <p>Año: ${seguro.anio}</p>
+    <p>Tipo: ${seguro.tipo}</p>
+    <p>Total: $${total}</p>`;
+    resultado.appendChild(div)
+}
+
 //Event Listener 
 const formulario = document.getElementById('cotizar-seguro');
 
@@ -89,14 +115,20 @@ formulario.addEventListener("submit", function (e) {
 
     //Revisamos que los campos no esten vacíos
     if (marcaSeleccionada === "" || anioSeleccionado === "" || tipo === "") {
+
         //Interfaz imprimiendo un error
         interfaz.mostrarError("Faltan datos, revisa el formulario y prueba de nuevo", "error");
+
     } else {
+
         //Instancia seguro y mostrar interfaz
         const seguro = new Seguro(marcaSeleccionada, anioSeleccionado, tipo);
 
         //Cotizar el seguro
         const cantidad = seguro.cotizarSeguro();
+
+        //Mostrar el resultado
+        interfaz.mostrarResultado(seguro, cantidad);
     }
 });
 
