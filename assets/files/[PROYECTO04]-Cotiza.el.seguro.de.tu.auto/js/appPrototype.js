@@ -1,4 +1,3 @@
-//VIDEO 89
 //Constructor para Seguro
 function Seguro(marca, anio, tipo) {
     this.marca = marca;
@@ -50,7 +49,7 @@ Seguro.prototype.cotizarSeguro = function (informacion) {
 function Interfaz() { }
 
 //Mensaje que se imprime en el HTML
-Interfaz.prototype.mostrarError = function (mensaje, tipo) {
+Interfaz.prototype.mostrarMensaje = function (mensaje, tipo) {
     const div = document.createElement("div");
 
     if (tipo === "error") {
@@ -64,7 +63,7 @@ Interfaz.prototype.mostrarError = function (mensaje, tipo) {
 
     setTimeout(function () {
         document.querySelector(".mensaje").remove();
-    }, 3000);
+    }, 1000);
 }
 
 //Imprime el resultado de la cotización
@@ -85,12 +84,18 @@ Interfaz.prototype.mostrarResultado = function (seguro, total) {
     //Crear un div
     const div = document.createElement("div");
     div.innerHTML = `
-    <p>Tu Resumen:</p>
+    <p class="header">Tu Resumen:</p>
     <p>Marca: ${marca}</p>
     <p>Año: ${seguro.anio}</p>
     <p>Tipo: ${seguro.tipo}</p>
     <p>Total: $${total}</p>`;
-    resultado.appendChild(div)
+    const spinner = document.querySelector("#cargando img");
+    spinner.style.display = "block";
+    setTimeout(function(){
+        spinner.style.display = "none";
+        resultado.appendChild(div)
+    },2000)
+    
 }
 
 //Event Listener 
@@ -117,9 +122,14 @@ formulario.addEventListener("submit", function (e) {
     if (marcaSeleccionada === "" || anioSeleccionado === "" || tipo === "") {
 
         //Interfaz imprimiendo un error
-        interfaz.mostrarError("Faltan datos, revisa el formulario y prueba de nuevo", "error");
+        interfaz.mostrarMensaje("Faltan datos, revisa el formulario y prueba de nuevo", "error");
 
     } else {
+        //Limpiar resultados anteriores
+        const resultados = document.querySelector("#resultado div");
+        if(resultados != null){
+            resultados.remove();
+        }
 
         //Instancia seguro y mostrar interfaz
         const seguro = new Seguro(marcaSeleccionada, anioSeleccionado, tipo);
@@ -129,6 +139,7 @@ formulario.addEventListener("submit", function (e) {
 
         //Mostrar el resultado
         interfaz.mostrarResultado(seguro, cantidad);
+        interfaz.mostrarMensaje("Cotizando...","exito");
     }
 });
 
