@@ -1,3 +1,14 @@
-User-agent: Googlebot
-Disallow: /
+User-agent: *
+Disallow: /assets/img/
+Disallow: /assets/files/
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.webp$
+Allow: /
 
+# Bloquea indexación de imágenes (protección de identidad visual)
+# Permite indexar el contenido textual del sitio (SEO profesional)
+# Sitemap opcional (añadir si usas uno)
+# Sitemap: https://Aguppesce.github.io/sitemap.xml
