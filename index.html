@@ -17,6 +17,7 @@
   <link rel="icon" type="image/png" href="https://Aguppesce.github.io/assets/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <title>Agustín Pérez Pesce | Cloud & Ciberseguridad</title>
 </head>
@@ -29,34 +30,29 @@
     <p id="typed-text" class="typing"></p>
   </header>
 
-  <!-- Animación typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    const typed = new Typed("#typed-text", {
-      strings: [
-        "Técnico en Sistemas con orientación en Cloud y Ciberseguridad",
-        "Aprendiendo Seguridad en la Nube y Prácticas DevSecOps",
-        "Explorando Linux, Automatización y Arquitecturas Seguras",
-        "Apasionado por la Tecnología y la Mejora Continua"
-      ],
-      typeSpeed: 45,
-      backSpeed: 25,
-      backDelay: 2000,
-      loop: true
-    });
-  </script>
+  <!-- SOBRE MÍ -->
+  <section class="about fade-in">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy Técnico en Sistemas con experiencia en soporte IT, infraestructura y desarrollo backend.
+      Actualmente oriento mi carrera hacia la <strong>Ciberseguridad</strong> y la 
+      <strong>Ingeniería Cloud</strong>, con un enfoque en la automatización, la seguridad y la mejora continua.
+    </p>
+    <a class="cv-button" href="assets/docs/CV_Agustin_Perez_Pesce.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar CV</a>
+  </section>
 
   <main>
     <!-- Experiencia y proyectos -->
     <section class="projects fade-in">
-      <h2>Experiencia Técnica & Proyectos de Aprendizaje</h2>
+      <h2>Experiencia Profesional & Proyectos</h2>
       <div class="projects-grid">
 
         <div class="card">
           <h3>Cloud Engineer Internship</h3>
           <p>
-            Participé en el diseño e implementación de pipelines CI/CD con <strong>GitHub Actions</strong> y <strong>AWS CodePipeline</strong>,
-            aprendiendo sobre automatización, despliegue seguro y control de versiones colaborativo.
+            Implementación de pipelines CI/CD con <strong>GitHub Actions</strong> y <strong>AWS CodePipeline</strong>,
+            integrando autenticación segura con <strong>OIDC e IAM Roles</strong>. Enfoque <strong>DevSecOps</strong> 
+            y uso de <strong>Git Flow</strong> para desarrollo colaborativo.
           </p>
         </div>
 
@@ -99,6 +95,19 @@
       </div>
     </section>
 
+    <!-- Stack tecnológico -->
+    <section class="tech-stack fade-in">
+      <h2>Herramientas & Tecnologías</h2>
+      <div class="icons-grid">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+      </div>
+    </section>
+
     <!-- Certificaciones -->
     <section class="projects fade-in">
       <h2>Certificaciones & Formación</h2>
@@ -131,17 +140,6 @@
       </div>
     </section>
 
-    <!-- Sección de aprendizaje -->
-    <section class="fade-in learning">
-      <h2>En constante aprendizaje</h2>
-      <p>
-        Sigo ampliando mis conocimientos en <strong>Ciberseguridad</strong>, 
-        <strong>Infraestructura Cloud</strong> y <strong>Automatización</strong>. 
-        Mi objetivo es integrar la seguridad como parte fundamental 
-        de cada solución técnica que desarrollo.
-      </p>
-    </section>
-
     <!-- Contacto -->
     <section class="contact fade-in">
       <h2>Contacto</h2>
@@ -152,6 +150,7 @@
         <a href="mailto:aguppesce@gmail.com">Email</a> ·
         <a href="https://aguppesce.github.io" target="_blank">Portfolio</a>
       </div>
+      <p class="contact-note">Si te interesa colaborar o intercambiar ideas, no dudes en contactarme.</p>
     </section>
   </main>
 
@@ -162,7 +161,7 @@
     <p>© 2025 Agustín Pérez Pesce · Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Fondo animado -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
@@ -185,7 +184,19 @@
       retina_detect: true,
     });
 
-    // Contador de visitas
+    const typed = new Typed("#typed-text", {
+      strings: [
+        "Técnico en Sistemas con orientación en Cloud y Ciberseguridad",
+        "Aprendiendo Seguridad en la Nube y Prácticas DevSecOps",
+        "Explorando Linux, Automatización y Arquitecturas Seguras",
+        "Apasionado por la Tecnología y la Mejora Continua"
+      ],
+      typeSpeed: 45,
+      backSpeed: 25,
+      backDelay: 2000,
+      loop: true
+    });
+
     async function updateVisits() {
       try {
         const res = await fetch("https://api.countapi.xyz/hit/aguppesce.github.io/visits");
