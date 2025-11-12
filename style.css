@@ -218,5 +218,11 @@ h2::after {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  filter: drop-shadow(0 0 4px rgba(0, 200, 83, 0.2));
+  filter: drop-shadow(0 0 6px rgba(0, 200, 83, 0.25));
+  transition: transform 0.3s ease;
 }
+
+.projects-grid img:hover {
+  transform: scale(1.08);
+}
+
