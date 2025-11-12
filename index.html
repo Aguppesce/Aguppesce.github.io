@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portafolio profesional de Agustín Pérez Pesce - Técnico en Sistemas con orientación en Cloud y Ciberseguridad." />
   <meta name="author" content="Agustín Pérez Pesce" />
   <meta name="keywords" content="Agustín Pérez Pesce, ciberseguridad, cloud, linux, devops, infraestructura, backend" />
@@ -11,6 +13,10 @@
   <meta property="og:image" content="https://Aguppesce.github.io/assets/img/hero-image-home.jpg" />
   <meta property="og:url" content="https://Aguppesce.github.io" />
   <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" type="image/png" href="https://Aguppesce.github.io/assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 
   <title>Agustín Pérez Pesce | Cloud & Ciberseguridad</title>
 </head>
@@ -23,6 +29,7 @@
     <p id="typed-text" class="typing"></p>
   </header>
 
+  <!-- Animación typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     const typed = new Typed("#typed-text", {
@@ -42,15 +49,14 @@
   <main>
     <!-- Experiencia y proyectos -->
     <section class="projects fade-in">
-      <h2>Experiencia Profesional & Proyectos</h2>
+      <h2>Experiencia Técnica & Proyectos de Aprendizaje</h2>
       <div class="projects-grid">
 
         <div class="card">
           <h3>Cloud Engineer Internship</h3>
           <p>
-            Implementación de pipelines CI/CD con <strong>GitHub Actions</strong> y <strong>AWS CodePipeline</strong>,
-            integrando autenticación segura con <strong>OIDC e IAM Roles</strong>. Enfoque <strong>DevSecOps</strong> 
-            y uso de <strong>Git Flow</strong> para desarrollo colaborativo.
+            Participé en el diseño e implementación de pipelines CI/CD con <strong>GitHub Actions</strong> y <strong>AWS CodePipeline</strong>,
+            aprendiendo sobre automatización, despliegue seguro y control de versiones colaborativo.
           </p>
         </div>
 
@@ -107,7 +113,6 @@
         <div class="card">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" height="40" />
           <h3>Google Data Analytics Professional</h3>
-          <h3>Google Data Analytics</h3>
           <p>Análisis de datos, métricas y toma de decisiones basadas en evidencia.</p>
         </div>
 
@@ -126,6 +131,17 @@
       </div>
     </section>
 
+    <!-- Sección de aprendizaje -->
+    <section class="fade-in learning">
+      <h2>En constante aprendizaje</h2>
+      <p>
+        Sigo ampliando mis conocimientos en <strong>Ciberseguridad</strong>, 
+        <strong>Infraestructura Cloud</strong> y <strong>Automatización</strong>. 
+        Mi objetivo es integrar la seguridad como parte fundamental 
+        de cada solución técnica que desarrollo.
+      </p>
+    </section>
+
     <!-- Contacto -->
     <section class="contact fade-in">
       <h2>Contacto</h2>
@@ -137,17 +153,6 @@
         <a href="https://aguppesce.github.io" target="_blank">Portfolio</a>
       </div>
     </section>
-
-    <section class="fade-in learning">
-      <h2>En constante aprendizaje</h2>
-      <p>
-        Sigo ampliando mis conocimientos en <strong>Ciberseguridad</strong>, 
-        <strong>Infraestructura Cloud</strong> y <strong>Automatización</strong>. 
-        Mi objetivo es integrar la seguridad como parte fundamental 
-        de cada solución técnica que desarrollo.
-      </p>
-    </section>
-
   </main>
 
   <footer class="fade-in">
@@ -157,7 +162,7 @@
     <p>© 2025 Agustín Pérez Pesce · Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Fondo animado -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
@@ -178,20 +183,6 @@
       },
       interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
       retina_detect: true,
-    });
-
-    // Animación typed.js
-    const typed = new Typed("#typed-text", {
-      strings: [
-        "Especialista en Ciberseguridad",
-        "Ingeniería Cloud & DevSecOps",
-        "Automatización y Seguridad en AWS",
-        "Backend Developer | Linux Enthusiast"
-      ],
-      typeSpeed: 45,
-      backSpeed: 25,
-      backDelay: 2000,
-      loop: true
     });
 
     // Contador de visitas
