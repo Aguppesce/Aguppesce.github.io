@@ -24,6 +24,9 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
   <title>Agustín Pérez Pesce | Infraestructura & Ciberseguridad</title>
 </head>
 <body>
@@ -33,8 +36,7 @@
   <!-- Encabezado -->
   <header class="fade-in">
     <h1>Agustín Pérez Pesce</h1>
-    <p>Infraestructura, Cloud & Seguridad Informática</p>
-    <div class="typing">Soporte IT | Cloud Engineer | Ciberseguridad</div>
+    <p><span id="typed"></span></p>
   </header>
 
   <main>
@@ -94,6 +96,38 @@
       </div>
     </section>
 
+    <!-- Certificaciones & Formación -->
+    <section class="fade-in">
+      <h2>Certificaciones & Formación</h2>
+      <div class="projects-grid">
+
+        <div class="card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" height="40" />
+          <h3>Cloud Fundamentals</h3>
+          <p>Fundamentos de AWS, IAM, EC2, VPC y servicios core para entornos cloud seguros.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" height="40" />
+          <h3>Google Data Analytics Professional</h3>
+          <p>Certificación orientada a análisis de datos, visualización y métricas de rendimiento técnico.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" height="40" />
+          <h3>Programación Fullstack Java - Oracle ONE</h3>
+          <p>Desarrollo backend con Java, Spring Boot y bases de datos SQL (MySQL, PostgreSQL).</p>
+        </div>
+
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/UTN_logo.png" alt="UTN" height="40" />
+          <h3>Técnico Universitario en Programación - UTN</h3>
+          <p>Formación técnica universitaria en lógica, algoritmos, estructuras y desarrollo de software.</p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Contacto -->
     <section class="contact fade-in">
       <h2>Contacto</h2>
@@ -125,6 +159,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
+    /* Fondo animado */
     particlesJS("particles-js", {
       particles: {
         number: { value: 60 },
@@ -147,6 +182,7 @@
       retina_detect: true,
     });
 
+    /* Contador de visitas */
     async function updateVisits() {
       try {
         const res = await fetch("https://api.countapi.xyz/hit/aguppesce.github.io/visits");
@@ -157,6 +193,17 @@
       }
     }
     updateVisits();
+
+    /* Typed.js para animar el título */
+    new Typed("#typed", {
+      strings: ["Infraestructura Cloud", "Seguridad Informática", "Soporte Técnico", "Automatización DevOps"],
+      typeSpeed: 60,
+      backSpeed: 35,
+      backDelay: 1800,
+      loop: true,
+      showCursor: true,
+      cursorChar: "|"
+    });
   </script>
 </body>
 </html>
