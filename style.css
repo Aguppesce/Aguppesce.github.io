@@ -1,3 +1,4 @@
+/* ===== Estilo Moderno Profesional ===== */
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +14,7 @@ body {
   min-height: 100vh;
 }
 
+/* ===== Fondo Partículas ===== */
 #particles-js {
   position: fixed;
   top: 0;
@@ -22,6 +24,7 @@ body {
   z-index: -1;
 }
 
+/* ===== Encabezado ===== */
 header {
   text-align: center;
   padding: 100px 20px 40px;
@@ -31,35 +34,18 @@ header h1 {
   font-size: 2.8rem;
   color: #00c853;
   letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(0, 200, 83, 0.4);
 }
 
 header p {
-  font-size: 1.3rem;
-  color: #8b949e;
-  margin-bottom: 15px;
-}
-
-.typing {
   font-size: 1.4rem;
-  border-right: 3px solid #00c853;
-  width: fit-content;
-  margin: 0 auto;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 4s steps(25, end) infinite alternate, blink 0.8s infinite;
+  color: #8b949e;
+  margin-top: 10px;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 29ch; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
+/* ===== Secciones ===== */
 section {
-  max-width: 900px;
+  max-width: 950px;
   margin: 60px auto;
   padding: 20px;
 }
@@ -68,15 +54,18 @@ h2 {
   color: #00c853;
   border-bottom: 2px solid #00c853;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 200, 83, 0.2);
 }
 
 p {
   line-height: 1.7;
   color: #e6edf3;
+  font-size: 1.05rem;
 }
 
+/* ===== Tarjetas (Proyectos & Certificaciones) ===== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -87,47 +76,46 @@ p {
 .card {
   background: #161b22;
   padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 14px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   box-shadow: 0 0 10px rgba(0, 200, 83, 0.08);
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
+  box-shadow: 0 0 25px rgba(0, 200, 83, 0.3);
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto 10px;
+  filter: grayscale(40%) brightness(0.9);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.08);
 }
 
 .card h3 {
   color: #00c853;
-  margin-bottom: 10px;
-}
-
-.social a {
-  color: #00c853;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.social a:hover {
-  color: #1f6feb;
-}
-
-footer {
+  font-size: 1.2rem;
   text-align: center;
-  padding: 30px;
-  font-size: 0.95rem;
-  color: #8b949e;
-  border-top: 1px solid #21262d;
-}
-
-.counter {
   margin-bottom: 10px;
-  color: #e6edf3;
-  font-weight: 500;
 }
 
+.card p {
+  text-align: center;
+  color: #e6edf3;
+  font-size: 0.95rem;
+}
+
+/* ===== Animación Fade-In ===== */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -141,7 +129,83 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
-  header h1 { font-size: 2.1rem; }
-  .typing { font-size: 1.1rem; }
+/* ===== Contacto ===== */
+.social {
+  text-align: center;
+}
+
+.social a {
+  color: #00c853;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social a:hover {
+  color: #1f6feb;
+  text-shadow: 0 0 6px rgba(0, 200, 83, 0.4);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 35px 10px;
+  font-size: 0.95rem;
+  color: #8b949e;
+  border-top: 1px solid #21262d;
+  background: #0d1117;
+}
+
+.counter {
+  margin-bottom: 10px;
+  color: #e6edf3;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* ===== Ajustes Responsivos ===== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  header p {
+    font-size: 1.1rem;
+  }
+  section {
+    padding: 10px;
+  }
+}
+
+/* ===== Detalles Estéticos ===== */
+strong {
+  color: #00e676;
+}
+
+em {
+  color: #9be7ff;
+}
+
+/* ===== Efectos adicionales (líneas y brillos) ===== */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 40%, rgba(0, 200, 83, 0.1) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.card:hover::before {
+  transform: translateX(100%);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #00c853;
+  margin-top: 8px;
+  border-radius: 2px;
 }
