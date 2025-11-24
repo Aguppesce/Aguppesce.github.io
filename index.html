@@ -21,6 +21,7 @@
 
   <title>Agustín Pérez Pesce | Cloud & Ciberseguridad</title>
 </head>
+
 <body>
   <!-- Fondo animado -->
   <div id="particles-js"></div>
@@ -155,9 +156,12 @@
   </main>
 
   <footer class="fade-in">
-    <div class="counter">
-      <span id="visits">0</span> visitas al sitio
+
+    <!-- 🔥 NUEVO BADGE DE VISITAS (MODERNO Y TOTALMENTE FUNCIONAL) -->
+    <div class="counter" style="margin-bottom: 12px;">
+      <img src="https://komarev.com/ghpvc/?username=Aguppesce&color=00c853&style=flat-square&label=Visitas+al+sitio" />
     </div>
+
     <p>© 2025 Agustín Pérez Pesce · Todos los derechos reservados.</p>
   </footer>
 
@@ -196,17 +200,6 @@
       backDelay: 2000,
       loop: true
     });
-
-    async function updateVisits() {
-      try {
-        const res = await fetch("https://api.countapi.xyz/hit/aguppesce.github.io/visits");
-        const data = await res.json();
-        document.getElementById("visits").textContent = data.value.toLocaleString("es-AR");
-      } catch (error) {
-        console.error("Error al actualizar visitas:", error);
-      }
-    }
-    updateVisits();
   </script>
 </body>
 </html>
