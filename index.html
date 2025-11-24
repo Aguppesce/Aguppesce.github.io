@@ -157,49 +157,96 @@
 
   <footer class="fade-in">
 
-    <!-- 🔥 NUEVO BADGE DE VISITAS (MODERNO Y TOTALMENTE FUNCIONAL) -->
-    <div class="counter" style="margin-bottom: 12px;">
-      <img src="https://komarev.com/ghpvc/?username=Aguppesce&color=00c853&style=flat-square&label=Visitas+al+sitio" />
-    </div>
+  <!-- ==== CONTADOR REAL #1 - COUNTERAPI ==== -->
+  <div class="counter">
+    <span id="counterapi">Cargando…</span> visitas (CounterAPI)
+  </div>
 
-    <p>© 2025 Agustín Pérez Pesce · Todos los derechos reservados.</p>
-  </footer>
+  <!-- ==== CONTADOR REAL #2 - HITCOUNT.XYZ ==== -->
+  <div class="counter">
+    <img src="https://hitcount.pythonanywhere.com/count/tag.svg?url=https://aguppesce.github.io" alt="hitcount" />
+    <span>Visitas (HitCount)</span>
+  </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 60 },
-        color: { value: "#00C853" },
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: 3 },
-        move: { enable: true, speed: 1.2 },
-        line_linked: {
-          enable: true,
-          distance: 140,
-          color: "#00C853",
-          opacity: 0.25,
-          width: 1,
-        },
+  <!-- ==== CONTADOR REAL #3 - REPLIT API ENDPOINT ==== -->
+  <div class="counter">
+    <span id="replit">Cargando…</span> visitas (Replit Tracker)
+  </div>
+
+  <p>© 2025 Agustín Pérez Pesce · Todos los derechos reservados.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+  /* =============================
+      CONFIGURACIÓN DE PARTICULAS
+     ============================= */
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 60 },
+      color: { value: "#00C853" },
+      shape: { type: "circle" },
+      opacity: { value: 0.3 },
+      size: { value: 3 },
+      move: { enable: true, speed: 1.2 },
+      line_linked: {
+        enable: true,
+        distance: 140,
+        color: "#00C853",
+        opacity: 0.25,
+        width: 1,
       },
-      interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
-      retina_detect: true,
-    });
+    },
+    interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
+    retina_detect: true,
+  });
 
-    const typed = new Typed("#typed-text", {
-      strings: [
-        "Técnico en Sistemas con orientación en Cloud y Ciberseguridad",
-        "Aprendiendo Seguridad en la Nube y Prácticas DevSecOps",
-        "Explorando Linux, Automatización y Arquitecturas Seguras",
-        "Apasionado por la Tecnología y la Mejora Continua"
-      ],
-      typeSpeed: 45,
-      backSpeed: 25,
-      backDelay: 2000,
-      loop: true
-    });
-  </script>
+  /* =============================
+            TYPED JS
+     ============================= */
+  const typed = new Typed("#typed-text", {
+    strings: [
+      "Técnico en Sistemas con orientación en Cloud y Ciberseguridad",
+      "Aprendiendo Seguridad en la Nube y Prácticas DevSecOps",
+      "Explorando Linux, Automatización y Arquitecturas Seguras",
+      "Apasionado por la Tecnología y la Mejora Continua"
+    ],
+    typeSpeed: 45,
+    backSpeed: 25,
+    backDelay: 2000,
+    loop: true
+  });
+
+  /* ==========================================================
+         CONTADOR REAL #1 - COUNTERAPI (RECOMENDADO)
+     ========================================================== */
+  async function loadCounterAPI() {
+    try {
+      let r = await fetch("https://api.counterapi.dev/v1/aguppesce.github.io/visits/up");
+      let data = await r.json();
+      document.getElementById("counterapi").innerText = data.count;
+    } catch (e) {
+      document.getElementById("counterapi").innerText = "Error";
+    }
+  }
+  loadCounterAPI();
+
+  /* ==========================================================
+        CONTADOR REAL #3 - REPLIT (TRACKER AVANZADO)
+     ========================================================== */
+
+  async function loadReplitTracker() {
+    try {
+      let r = await fetch("https://visit-counter.aguppesce.repl.co/visit");
+      let data = await r.json();
+      document.getElementById("replit").innerText = data.total;
+    } catch {
+      document.getElementById("replit").innerText = "Error";
+    }
+  }
+  loadReplitTracker();
+</script>
 </body>
 </html>
