@@ -80,12 +80,6 @@ p {
   transform: scale(1.05);
 }
 
-.cv-note {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: #8b949e;
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -102,6 +96,14 @@ p {
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 25px rgba(0, 200, 83, 0.3);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
 }
 
 .card h3 {
